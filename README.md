@@ -33,9 +33,9 @@ Initialize -> y_hat := Predict(activation(W * X))
 * SVM (Support Vector Machines)
     * Valuable niche kernels
 * Decision Trees (Random Forest)
-    * Ensemble of full trees (parallel)
+    * Ensemble of full trees
 * Gradient Boosting
-    * Ensemble of weak trees (sequential)
+    * Ensemble of weak trees
 
 ## Unsupervised Clustering
 * AP (Affinity Propagation)
@@ -252,6 +252,7 @@ Mapping your data to a dimension where it is linearly separable. With a Gaussian
 ## Regression & Classification
 * Auto-Sklearn [Good Baseline]
 * TPOT (Tree-based Pipeline Optimization Tool)
+* H2O
 ## Neural Networks
 * ADAnet [Not recommended]
     * Uses components
