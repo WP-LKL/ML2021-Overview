@@ -10,13 +10,33 @@ Initialize -> y_hat := Predict(activation(W * X))
            -> y_hat ...
 ```
 ## NLP (Natural Language Processing)
+### Tasks
+* Seq2Seq (Encoder Decoder)
+    * Encoder: Embedding, Hidden, 
+* Seq2Token
+* Token prediction
+### Architecture
 * RNN (Recurrent Neural Networks)
     * Vanishing/Exploding gradient problem
+    * Beam search / Greedy Search
 * LSTM (Long Short Term Memory)
     * Difficult to train
-    * I/O bottleneck - poor parallelization.
+    * I/O bottleneck - poor parallelization
+        * stnd(a) := W_a @ x_t + U_a * h_{t-1} + b_a
+        * h_t <- o_t * tanh(c_t)                  Hidden state, immediatly necessary information to next layer
+        * c_t <- f_t * c_{t-1} + i_t * j_t        Contextual longer term information
+        * o_t <- sigm(stnd(o))                    Cell state
+        * f_t <- sigm(stnd(f))                    Ouput gate
+        * i_t <- sigm(stnd(i))                    Input gate
+        * j_t <- tanh(stnd(j))                    Modulation gate
+        * U: m x m == hidden x hidden
+        * W: m x d == hidden x dims
+        * Computational order:
+        * <f, i, j, o>  -->  c  -->  h 
+        
 * Transformers with Transfer Learning
-    * (I would recommend the SimpleTransformers HuggingFace wrapper)
+    * HuggingFace
+    * Gene
 
 ## Time-Series data
 * RNN (Recurrent Neural Networks)
@@ -288,6 +308,9 @@ Others: Pachhyderm, Valohai, Sacred (Omniboard), GuildAI, MLflow, Tensorboard, D
 | Kedro          |           |
 | DBT            |           |
 | Dagster        |           |
+| Databricks     |           |
+| Snowflake      |           |
+
 
 Beyond these most cloud platforms will have their own scheduler and tools for Extracting, Transforming, and Loading.
 
